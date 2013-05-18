@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>To Don't List</title>
+    <script type="text/javascript" src="Scripts/knockout-2.2.1.js"></script>
+    <script type="text/javascript" src="src/ToDontList.js"></script>
+</head>
+    <body>
+        <h1>Don't Do These Things!</h1>
+        <div id="itemlist">
+            <ul data-bind="foreach: items">
+                <li><h3 data-bind="text: title"></h3>
+                    <span data-bind="text: description"></span></li>
+            </ul>
+        </div>
+        
+        <div>
+            <form>
+                <input type="text" name="title" data-bind="value: title"/>
+                <input type="text" name="description" data-bind="value: description" />
+                <input type="button" value="Add" data-bind="click: add_item"/>
+            </form>
+        </div>
+    
+        <script type="text/javascript">
+            var initial_list = [
+                { "title": "Thing not to do.", "description": "Please do not do this thing." },
+                { "title": "Another thing not to do.", "description": "Please do not do this other thing." }];
+            var viewModel = new ToDontList(initial_list);
+            ko.applyBindings(viewModel);
+        </script>
+    </body>
+</html>
