@@ -14,7 +14,7 @@ files = [
   'Scripts/jquery-2.0.0.js',
   'Scripts/jasmine-jquery.js',
   'src/**/*.js',
-  'spec/**/*Spec.js'
+  'spec/**/*Spec*.js'
 ];
 
 
