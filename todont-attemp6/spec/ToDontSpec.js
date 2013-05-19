@@ -32,4 +32,10 @@
         expect(target.items().length).toBe(1);
 
     });
+
+    it("should be able to persist items", function() {
+        var target = new ToDontList(test_items);
+        var saved = target.save();
+        
+    });
 });
