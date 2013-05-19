@@ -34,8 +34,8 @@
 
     it("should be able to persist items via a service", function () {
 
-        var target = new ToDontList(test_items);
-        target.save(mock_save_service);
+        var target = new ToDontList(test_items, mock_save_service);
+        target.save();
         
         expect(mock_save_service.saved).toEqual(true);
 

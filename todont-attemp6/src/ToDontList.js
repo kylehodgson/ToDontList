@@ -1,5 +1,6 @@
-﻿var ToDontList = function (initialList) {
+﻿var ToDontList = function (initialList,saveService) {
     var self = this;
+    self.saveService = saveService;
     
     self.items = ko.observableArray();
 
@@ -20,8 +21,8 @@
         self.items.remove(item);
     };
 
-    self.save = function (service) {
-        service.save(JSON.stringify(self.items()));
+    self.save = function () {
+        self.saveService.save(JSON.stringify(self.items()));
     };
 
 };

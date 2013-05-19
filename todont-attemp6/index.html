@@ -7,15 +7,6 @@
 </head>
     <body>
         <h1>Don't Do These Things!</h1>
-        <div id="itemlist">
-            <ul data-bind="foreach: items">
-                <li>
-                    <h3 data-bind="text: title"></h3>
-                    <span data-bind="text: description"></span>
-                    <a href="#?" data-bind="click: $parent.delete_item" >remove</a>
-                </li>
-            </ul>
-        </div>
         
         <div id="additem">
             <form>
@@ -25,14 +16,33 @@
                 <div>Description:</div>
                 <input type="text" name="description" data-bind="value: description" />
                 <input type="button" value="Add" data-bind="click: add_item"/>
+                <input type="button" value="Save" data-bind="click: save"/>
             </form>
+        </div>
+
+        <div id="itemlist">
+            <ul data-bind="foreach: items">
+                <li>
+                    <h3 data-bind="text: title"></h3>
+                    <span data-bind="text: description"></span>
+                    <a href="#?" data-bind="click: $parent.delete_item" >remove</a>
+                </li>
+            </ul>
         </div>
     
         <script type="text/javascript">
+            
+            var stub_service = new function () {
+                this.save = function (data) {
+                    alert("Saving data: " + data);
+                };
+            };
+            
             var initial_list = [
                 { "title": "Thing not to do.", "description": "Please do not do this thing." },
                 { "title": "Another thing not to do.", "description": "Please do not do this other thing." }];
-            var viewModel = new ToDontList(initial_list);
+            
+            var viewModel = new ToDontList(initial_list, stub_service);
             ko.applyBindings(viewModel);
         </script>
     </body>
