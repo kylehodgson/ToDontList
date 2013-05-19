@@ -1,5 +1,5 @@
 ﻿describe("To Don't List", function() {
-
+    
     var test_items = [
         { "title": "Thing not to do.", "description": "Please do not do this thing." },
         { "title": "Another thing not to do.", "description": "Please do not do this other thing." }];
@@ -30,12 +30,30 @@
         target.delete_item(test_item1);
 
         expect(target.items().length).toBe(1);
-
     });
 
-    it("should be able to persist items", function() {
-        var target = new ToDontList(test_items);
-        var saved = target.save();
+    it("should be able to persist items via a service", function () {
         
+        var mock_service = new function() {
+            var self = this;
+            self.saved = false;
+            self.persisted = "";
+            self.save = function (data) {
+                self.saved = true;
+                self.persisted = data;
+            };
+        };
+
+        var target = new ToDontList(test_items);
+        target.save(mock_service);
+        
+        expect(mock_service.saved).toEqual(true);
+
+        var rehydrated = JSON.parse(mock_service.persisted);
+        expect(rehydrated[0]).toEqual(test_item1);
+        expect(rehydrated[1]).toEqual(test_item2);
     });
+    
+    
+    
 });

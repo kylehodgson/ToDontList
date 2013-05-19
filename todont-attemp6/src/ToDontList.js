@@ -20,8 +20,8 @@
         self.items.remove(item);
     };
 
-    self.save = function() {
-        console.log("Saving " + JSON.stringify(self));
+    self.save = function (service) {
+        service.save(JSON.stringify(self.items()));
     };
 
 };
