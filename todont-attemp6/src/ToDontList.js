@@ -16,5 +16,9 @@
     self.add_item = function () {
         self.items.push({ "title": self.title(), "description": self.description() });
     };
-    
+
+    self.delete_item = function(item) {
+        self.items.remove(item);
+    };
+
 };

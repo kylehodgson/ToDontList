@@ -23,4 +23,13 @@
         expect(target.items()[0].title).toBe(test_item1.title);
         expect(target.items()[1].description).toBe(test_item2.description);
     });
+
+    it("should be able to delete items", function() {
+        var target = new ToDontList(test_items);
+        
+        target.delete_item(test_item1);
+
+        expect(target.items().length).toBe(1);
+
+    });
 });
