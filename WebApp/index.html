@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" style="margin:0; padding:0; color:#000; background:#a7a09a;">
+<html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title>To Don't List</title>
+    <link href="style/main.css" rel="stylesheet" />
     <script type="text/javascript" src="Scripts/knockout-2.2.1.js"></script>
     <script type="text/javascript" src="src/ToDontList.js"></script>
 </head>
     <body>
-        <div style="width:750px; margin:0 auto; ">
+        <div id="wrap">
             <h1>Don't Do These Things!</h1>
         
-        <div id="additem" style="float:left; width:250px;">
+        <div id="additem" >
             <form>
                 <h2>Add Item</h2>
                 <div>Title:</div>
@@ -22,7 +23,7 @@
             </form>
         </div>
 
-        <div id="itemlist" style="float:right; width:500px; ">
+        <div id="itemlist" >
             <ul data-bind="foreach: items">
                 <li>
                     <h3 data-bind="text: title"></h3>

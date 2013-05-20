@@ -1,0 +1,31 @@
+﻿html {
+    margin:0; padding:0; color:#000; 
+}
+body {
+
+}
+#wrap {
+    width:750px; margin:0 auto; 
+}
+#additem {
+    float:left; width:250px;
+}
+#itemlist {
+    float:right; width:500px;
+}
+h1 {
+    
+	font-size: 20pt;
+	padding-top: 12px;
+	padding-bottom: 3px;
+}
+h2 {
+	font-size: 14pt;
+	padding-top: 12px;
+	padding-bottom: 3px;
+}
+h3 {
+	font-size: 12pt;
+	padding-top: 12px;
+	padding-bottom: 3px;
+}
