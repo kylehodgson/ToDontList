@@ -1,34 +1,39 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" style="margin:0; padding:0; color:#000; background:#a7a09a;">
 <head>
     <title>To Don't List</title>
     <script type="text/javascript" src="Scripts/knockout-2.2.1.js"></script>
     <script type="text/javascript" src="src/ToDontList.js"></script>
 </head>
     <body>
-        <h1>Don't Do These Things!</h1>
+        <div style="width:750px; margin:0 auto; ">
+            <h1>Don't Do These Things!</h1>
         
-        <div id="additem">
+        <div id="additem" style="float:left; width:250px;">
             <form>
-                <h2>Add new item</h2>
+                <h2>Add Item</h2>
                 <div>Title:</div>
                 <input type="text" name="title" data-bind="value: title"/>
                 <div>Description:</div>
                 <input type="text" name="description" data-bind="value: description" />
                 <input type="button" value="Add" data-bind="click: add_item"/>
+                <h2>Save Items</h2>
                 <input type="button" value="Save" data-bind="click: save"/>
             </form>
         </div>
 
-        <div id="itemlist">
+        <div id="itemlist" style="float:right; width:500px; ">
             <ul data-bind="foreach: items">
                 <li>
                     <h3 data-bind="text: title"></h3>
                     <span data-bind="text: description"></span>
-                    <a href="#?" data-bind="click: $parent.delete_item" >remove</a>
+                    <a href="#" data-bind="click: $parent.delete_item" >remove</a>
                 </li>
             </ul>
         </div>
+            
+        </div>
+        
     
         <script type="text/javascript">
             
