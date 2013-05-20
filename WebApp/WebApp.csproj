@@ -71,6 +71,7 @@
     <Content Include="Scripts\jquery-2.0.0.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="spec\SpecHelpers.js" />
     <Content Include="spec\ToDontSpec.js" />
     <Content Include="src\ToDontList.js" />
     <Content Include="Web.config" />
