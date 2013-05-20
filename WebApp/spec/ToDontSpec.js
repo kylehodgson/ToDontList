@@ -43,7 +43,16 @@
         expect(rehydrated[0]).toEqual(test_item1);
         expect(rehydrated[1]).toEqual(test_item2);
     });
-    
-    
-    
+
+    it("should not crash when saving but not provided with a save service", function() {
+        var target = new ToDontList(test_items);
+        target.save();
+    });
+
+    it("should allow us to mark an item completed", function() {
+        var target = new ToDontList(test_items);
+        target.markComplete(test_item2);
+        expect(target.items()[1].completed).toBe(true);
+    });
+
 });

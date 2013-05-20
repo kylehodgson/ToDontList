@@ -1,11 +1,14 @@
 ﻿var ToDontList = function (initialList,saveService) {
     var self = this;
-    self.saveService = saveService;
     
     self.items = ko.observableArray();
 
     self.title = ko.observable();
     self.description = ko.observable();
+    
+    if (saveService instanceof Object && saveService.hasOwnProperty("save")) {
+      self.saveService = saveService;  
+    }
     
     if (initialList instanceof Array ) {
         initialList.forEach(function(item) {
@@ -22,7 +25,12 @@
     };
 
     self.save = function () {
-        self.saveService.save(JSON.stringify(self.items()));
+        if (self.saveService instanceof Object) {
+            self.saveService.save(JSON.stringify(self.items()));
+        } else {
+            console.log("No saveService provided.");
+        }
+            
     };
 
 };
