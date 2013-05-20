@@ -14,9 +14,9 @@
             <form>
                 <h2>Add Item</h2>
                 <div>Title:</div>
-                <input type="text" name="title" data-bind="value: title"/>
+                <input type="text" name="title" size="45" data-bind="value: title"/>
                 <div>Description:</div>
-                <input type="text" name="description" data-bind="value: description" />
+                <textarea type="text" cols="35" rows="3" name="description" data-bind="value: description" ></textarea>
                 <input type="button" value="Add" data-bind="click: add_item"/>
                 <h2>Save Items</h2>
                 <input type="button" value="Save" data-bind="click: save"/>
