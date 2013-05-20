@@ -1,8 +1,8 @@
 ﻿describe("To Don't List", function() {
     
     var test_items = [
-        { "title": "Thing not to do.", "description": "Please do not do this thing." },
-        { "title": "Another thing not to do.", "description": "Please do not do this other thing." }];
+        { "title": "Thing not to do.", "description": "Please do not do this thing.","complete": false },
+        { "title": "Another thing not to do.", "description": "Please do not do this other thing.","complete": false }];
     var test_item1 = test_items[0];
     var test_item2 = test_items[1];
 
@@ -51,8 +51,8 @@
 
     it("should allow us to mark an item completed", function() {
         var target = new ToDontList(test_items);
-        target.markComplete(test_item2);
-        expect(target.items()[1].completed).toBe(true);
+        target.mark_complete(test_item2);
+        expect(target.items()[1].complete).toBe(true);
     });
 
 });
