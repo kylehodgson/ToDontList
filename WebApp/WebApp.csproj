@@ -74,6 +74,7 @@
     <Content Include="spec\SpecHelpers.js" />
     <Content Include="spec\ToDontSpec.js" />
     <Content Include="src\ToDontList.js" />
+    <Content Include="style\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

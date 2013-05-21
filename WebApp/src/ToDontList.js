@@ -26,17 +26,15 @@
     };
 
     self.save = function () {
-        if (self.saveService instanceof Object) {
+        if (self.saveService instanceof Object)
             self.saveService.save(JSON.stringify(self.items()));
-            return;
-        }
-        console.log("No saveService provided.");
+        else    
+            console.log("No saveService provided.");
     };
 
-    self.mark_complete = function(completeItem) {
+    self.mark_complete = function(finishedItem) {
         self.items().forEach(function (item) {
-            if (item.title == completeItem.title) {
-                console.log("Found match.");
+            if (item === finishedItem) {
                 item.complete=true;
                 return;
             }
