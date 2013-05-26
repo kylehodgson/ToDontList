@@ -16,7 +16,7 @@
                 <div>Title:</div>
                 <input type="text" name="title" size="45" data-bind="value: title"/>
                 <div>Description:</div>
-                <textarea type="text" cols="35" rows="3" name="description" data-bind="value: description" ></textarea>
+                <textarea cols="35" rows="3" name="description" data-bind="value: description" ></textarea>
                 <input type="button" value="Add" data-bind="click: add_item"/>
                 <h2>Save Items</h2>
                 <input type="button" value="Save" data-bind="click: save"/>
@@ -26,9 +26,8 @@
         <div id="itemlist" >
             <ul data-bind="foreach: items">
                 <li>
-                    <div data-bind="css: { finished: complete }">
-                    <h3 data-bind="text: title" ></h3>
-                    <div data-bind="text: description"></div></div>
+                    <h3 data-bind="text: title, css: { finished: complete }" ></h3>
+                    <div data-bind="text: description, css: { finished: complete }"></div>
                     <a href="#" data-bind="click: $parent.delete_item">remove</a> |
                     <a href="#" data-bind="click: $parent.mark_complete">finished</a>
                 </li>

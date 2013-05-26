@@ -1,7 +1,9 @@
 ﻿html {
     margin:0; padding:0; color:#000; 
 }
-
+.finished {
+    text-decoration: line-through;
+}
 #wrap {
     width:750px; margin:0 auto; 
 }
@@ -26,7 +28,4 @@ h3 {
 	font-size: 12pt;
 	padding-top: 12px;
 	padding-bottom: 3px;
-}
-.finished {
-    text-decoration: line-through;
 }

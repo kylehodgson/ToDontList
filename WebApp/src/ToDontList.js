@@ -5,7 +5,6 @@
 
     self.title = ko.observable();
     self.description = ko.observable();
-    self.complete = ko.observable();
     
     if (saveService instanceof Object && saveService.hasOwnProperty("save")) {
       self.saveService = saveService;  
@@ -37,7 +36,7 @@
             console.log("No saveService provided.");
     };
 
-    self.mark_complete = function(finishedItem) {
+    self.mark_complete = function (finishedItem) {
         self.items().forEach(function (item) {
             if (item === finishedItem) {
                 item.complete=!item.complete;
