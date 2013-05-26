@@ -18,7 +18,12 @@
     }
 
     self.add_item = function () {
-        self.items.push({ "title": self.title(), "description": self.description(), "complete": false });
+        self.items.push(
+            {
+                "title":        self.title(),
+                "description":  self.description(),
+                "complete":     false
+            });
     };
 
     self.delete_item = function(item) {

@@ -27,8 +27,10 @@
             <ul data-bind="foreach: items">
                 <li>
                     <h3 data-bind="text: title"></h3>
-                    <span data-bind="text: description"></span>
-                    <a href="#" data-bind="click: $parent.delete_item" >remove</a>
+                    <div data-bind="text: description"></div>
+                    <a href="#" data-bind="click: $parent.delete_item" >remove</a> |
+                    <a href="#" data-bind="click: $parent.mark_complete">finished</a>
+                    <div data-bind></div>
                 </li>
             </ul>
         </div>
