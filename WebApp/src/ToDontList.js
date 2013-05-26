@@ -40,7 +40,7 @@
     self.mark_complete = function(finishedItem) {
         self.items().forEach(function (item) {
             if (item === finishedItem) {
-                item.complete=true;
+                item.complete=!item.complete;
                 return;
             }
         });

@@ -27,3 +27,6 @@ h3 {
 	padding-top: 12px;
 	padding-bottom: 3px;
 }
+.finished {
+    text-decoration: line-through;
+}

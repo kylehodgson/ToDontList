@@ -26,11 +26,11 @@
         <div id="itemlist" >
             <ul data-bind="foreach: items">
                 <li>
-                    <h3 data-bind="text: title"></h3>
-                    <div data-bind="text: description"></div>
-                    <a href="#" data-bind="click: $parent.delete_item" >remove</a> |
+                    <div data-bind="css: { finished: complete }">
+                    <h3 data-bind="text: title" ></h3>
+                    <div data-bind="text: description"></div></div>
+                    <a href="#" data-bind="click: $parent.delete_item">remove</a> |
                     <a href="#" data-bind="click: $parent.mark_complete">finished</a>
-                    <div data-bind></div>
                 </li>
             </ul>
         </div>
@@ -47,8 +47,8 @@
             };
             
             var initial_list = [
-                { "title": "Thing not to do.", "description": "Please do not do this thing." },
-                { "title": "Another thing not to do.", "description": "Please do not do this other thing." }];
+                { "title": "Thing not to do.", "description": "Please do not do this thing." , "complete": false},
+                { "title": "Another thing not to do.", "description": "Please do not do this other thing.", "complete": false }];
             
             var viewModel = new ToDontList(initial_list, stub_service);
             ko.applyBindings(viewModel);

@@ -55,4 +55,12 @@
         expect(target.items()[1].complete).toBe(true);
     });
 
+    it("should allow us to unmark an item completed", function() {
+        var target = new ToDontList(test_items);
+        target.mark_complete(test_item1);
+        expect(target.items()[0].complete).toBe(true);
+        target.mark_complete(test_item1);
+        expect(target.items()[0].complete).toBe(false);
+    });
+
 });
